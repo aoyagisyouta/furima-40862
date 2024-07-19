@@ -47,15 +47,14 @@
 | city              | string     | null: false  |
 | house_number      | string     | null: false  |
 | house_name        | string     |              |
-| phone_number      | integer    | null: false  |
+| phone_number      | string     | null: false  |
 | purchase          | references | null: false, foreign_key: true |
 
-- belongs_to :purchase
+
 
 ### Association 
 
-- belongs_to :item
-- belongs_to :user
+- belongs_to :purchase
 
 ## purchasesテーブル
 

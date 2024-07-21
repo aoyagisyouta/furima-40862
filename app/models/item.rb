@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
   belongs_to :user
   has_one_attached :image 
 
@@ -13,6 +15,15 @@ class Item < ApplicationRecord
     validates :price
     validates :user
   end 
+
+  with_options  numericality: { other_than: 1, message: "can't be blank" } do 
+    validates :category_id
+    validates :item_status_id
+    validates :shipping_cost_id
+    validates :prefecture_id
+    validates :shipping_day_id
+  end
+
   validates :image, presence: true, unless: :was_attached?
 
   def was_attached? 

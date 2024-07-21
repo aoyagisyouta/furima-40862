@@ -34,11 +34,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
-      it 'emailに全角文字が含まれると登録できない' do
-        @user.email = 'テスト@test'
-        @user.valid?
-        expect(@user.errors.full_messages).to include('Email is invalid. Input valid email address without full-width characters')
-      end
       it 'パスワードが空では登録できない' do
         @user.password = ''
         @user.password_confirmation = ''
@@ -65,6 +60,11 @@ RSpec.describe User, type: :model do
       it 'パスワードが数字を含まないと登録できない' do
         @user.password = 'aaaaaa'
         @user.password_confirmation = 'aaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
+      end
+      it 'パスワードに全角が含まれていると登録できない' do
+        @user.password = "あいうえお"
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
       end

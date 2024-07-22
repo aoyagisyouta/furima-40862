@@ -1,4 +1,4 @@
-class Prefecture < ActiveHash::Base 
+class Prefecture < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '北海道' },
@@ -14,7 +14,7 @@ class Prefecture < ActiveHash::Base
     { id: 12, name: '埼玉県' },
     { id: 13, name: '千葉県' },
     { id: 14, name: '東京都' },
-    { id: 15, name: '神奈川県'},
+    { id: 15, name: '神奈川県' },
     { id: 16, name: '新潟県' },
     { id: 17, name: '富山県' },
     { id: 18, name: '石川県' },
@@ -47,8 +47,8 @@ class Prefecture < ActiveHash::Base
     { id: 45, name: '大分県' },
     { id: 46, name: '宮崎県' },
     { id: 47, name: '鹿児島県' },
-    { id: 48, name: '沖縄県' },
+    { id: 48, name: '沖縄県' }
   ]
   include ActiveHash::Associations
-  has_many :items 
+  has_many :items
 end

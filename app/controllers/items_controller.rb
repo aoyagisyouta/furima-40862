@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   end 
   def create
     @item = Item.new(item_params)
+    render json:{item: item}
     if @item.save
       redirect_to root_path
     else

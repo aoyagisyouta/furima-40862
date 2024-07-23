@@ -27,7 +27,7 @@ class Item < ApplicationRecord
     validates :shipping_day_id
   end
   validates :price, presence: true,
-    numericality: { less_than_or_equal_to: 9_999_999, greater_than_or_equal_to: 300 }
+    numericality: { less_than_or_equal_to: 9_999_999, greater_than_or_equal_to: 300, only_integer: true }
 
   def was_attached?
     image.attached?

@@ -26,9 +26,8 @@ class Item < ApplicationRecord
     validates :prefecture_id
     validates :shipping_day_id
   end
-  validates :price, presence: true, format: { with: /\A\d+\z/, message: ' is not a number', if: lambda {
-                                                                                                  price.present?
-                                                                                                } }, numericality: { less_than_or_equal_to: 9_999_999, greater_than_or_equal_to: 300 }
+  validates :price, presence: true,
+    numericality: { less_than_or_equal_to: 9_999_999, greater_than_or_equal_to: 300 }
 
   def was_attached?
     image.attached?

@@ -1,16 +1,11 @@
 class PurchasesController < ApplicationController
-<<<<<<< HEAD
   before_action :set_item, only:[:index,:create]
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
-=======
-  def index
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
     @purchase_address = PurchaseAddress.new
   end
 
   def create
-<<<<<<< HEAD
     @purchase_address = PurchaseAddress.new(purchases_params)
     if @purchase_address.valid?
       pay_item
@@ -42,7 +37,4 @@ class PurchasesController < ApplicationController
     )
   end
 
-=======
-  end
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
 end

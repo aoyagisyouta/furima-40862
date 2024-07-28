@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <%= include_gon %>
-=======
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
-<%= render "shared/second-header"%>
 
 <div class='transaction-contents'>
   <div class='transaction-main'>
@@ -14,11 +10,8 @@
       <%= image_tag "item-sample.png", class: 'buy-item-img' %>
       <div class='buy-item-right-content'>
         <h2 class='buy-item-text'>
-<<<<<<< HEAD
-          <%= "#" %>
-=======
+
           <%= "商品名" %>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
         </h2>
         <div class='buy-item-price'>
           <p class='item-price-text'>¥<%= '999,999,999' %></p>
@@ -39,12 +32,8 @@
     </div>
     <%# /支払額の表示 %>
 
-<<<<<<< HEAD
     <%= form_with model: @purchase_address, url: item_purchases_path(@item), id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-=======
-    <%= form_with id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
@@ -92,66 +81,42 @@
           <label class="form-text">郵便番号</label>
           <span class="indispensable">必須</span>
         </div>
-<<<<<<< HEAD
         <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
-=======
-        <%= f.text_field :hoge, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">都道府県</label>
           <span class="indispensable">必須</span>
         </div>
-<<<<<<< HEAD
         <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-=======
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"prefecture"}) %>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">市区町村</label>
           <span class="indispensable">必須</span>
         </div>
-<<<<<<< HEAD
         <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
-=======
-        <%= f.text_field :hoge, class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">番地</label>
           <span class="indispensable">必須</span>
         </div>
-<<<<<<< HEAD
         <%= f.text_field :house_number, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
-=======
-        <%= f.text_field :hoge, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">建物名</label>
           <span class="form-any">任意</span>
         </div>
-<<<<<<< HEAD
         <%= f.text_field :house_name, class:"input-default", id:"building", placeholder:"例）柳ビル103"%>
-=======
-        <%= f.text_field :hoge, class:"input-default", id:"building", placeholder:"例）柳ビル103"%>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">電話番号</label>
           <span class="indispensable">必須</span>
         </div>
-<<<<<<< HEAD
         <%= f.text_field :phone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
-=======
-        <%= f.text_field :hoge, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
->>>>>>> d31ad30df2a9ca5b3e8e10d7d46b3c6b4ee87864
       </div>
     </div>
     <%# /配送先の入力 %>

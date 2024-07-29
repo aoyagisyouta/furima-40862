@@ -21,10 +21,10 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def edit 
-    if current_user != @item.user || @item.purchase.present?
-      redirect_to action: :index 
-    end 
+  def edit
+    return unless current_user != @item.user || @item.purchase.present?
+
+    redirect_to action: :index
   end
 
   def update
@@ -33,14 +33,12 @@ class ItemsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end 
+  end
 
   def destroy
-    if current_user == @item.user
-      @item.destroy
-    end 
+    @item.destroy if current_user == @item.user
     redirect_to root_path
-  end 
+  end
 
   private
 
@@ -51,5 +49,5 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end 
+  end
 end

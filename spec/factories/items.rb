@@ -10,7 +10,6 @@ FactoryBot.define do
     price            { rand(300..9_999_999) }
 
     association :user
-
     after(:build) do |item|
       item.image.attach(io: File.open(Rails.root.join('public/images/test_image.png')), filename: 'test_image.png')
     end
